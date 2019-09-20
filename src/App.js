@@ -69,7 +69,14 @@ class Calculator extends Component {
   }
 
   handleReset() {
-    this.setState({currentValue: '0'})
+    // 1st change
+    // this.setState({currentValue: '0'})
+    this.setState({
+      currentValue: '0',
+      previousValue: '0',
+      operation: null,
+      pending: false
+    });
   }
 
   executeOperation() {
