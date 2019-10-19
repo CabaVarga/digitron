@@ -64,7 +64,7 @@ class Calculator extends Component {
   handleResult() {
     if (this.state.pending) {
       let result = this.executeOperation();
-      this.setState({previousValue: '0', currentValue: String(result), operation: null, pending: false})
+      this.setState({previousValue: '0', currentValue: String(result), operation: 'result', pending: false})
     }
   }
 
@@ -95,6 +95,9 @@ class Calculator extends Component {
         let strResult = result.toFixed(2);
         result = Number(strResult);
         return result;
+      }
+      case 'result': {
+        return;
       }
       default:
         return;
